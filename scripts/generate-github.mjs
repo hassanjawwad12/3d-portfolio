@@ -54,7 +54,13 @@ async function main() {
   console.log(`Wrote ${repos.length} repos to ${path.relative(process.cwd(), OUT_PATH)}`)
 }
 
+// Non-fatal by design: this runs in `prebuild`, and a transient GitHub outage or
+// rate-limit must not break a deploy. We keep the committed snapshot (the runtime
+// already falls back to it) and exit 0 so `vite build` proceeds.
 main().catch((err) => {
-  console.error(`gh:snapshot failed — ${err instanceof Error ? err.message : String(err)}`)
-  process.exit(1)
+  console.warn(
+    `gh:snapshot skipped — ${err instanceof Error ? err.message : String(err)}. ` +
+      `Keeping the committed src/data/github.generated.json.`,
+  )
+  process.exit(0)
 })

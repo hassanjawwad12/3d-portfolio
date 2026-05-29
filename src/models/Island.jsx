@@ -20,7 +20,6 @@ export function Island({
   isRotating,
   setIsRotating,
   setCurrentStage,
-  currentFocusPoint,
   ...props
 }) {
   const islandRef = useRef();
@@ -153,6 +152,9 @@ export function Island({
       canvas.removeEventListener("touchend", handleTouchEnd);
       canvas.removeEventListener("touchmove", handleTouchMove);
     };
+    // Handlers are stable for the scene's lifetime; re-binding every render would
+    // thrash the canvas/window listeners.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gl, handlePointerDown, handlePointerUp, handlePointerMove]);
 
   // This function is called on each frame update

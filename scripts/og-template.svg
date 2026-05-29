@@ -1,0 +1,42 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#4F46E5"/>
+    </linearGradient>
+    <linearGradient id="badge" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- soft atmospheric glows -->
+  <circle cx="1050" cy="120" r="260" fill="#FFFFFF" fill-opacity="0.06"/>
+  <circle cx="120" cy="560" r="200" fill="#FFFFFF" fill-opacity="0.05"/>
+
+  <!-- monogram badge -->
+  <g transform="translate(96, 96)">
+    <rect x="0" y="0" width="120" height="120" rx="28" fill="url(#badge)"/>
+    <rect x="1" y="1" width="118" height="118" rx="27" fill="none" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="2"/>
+    <g stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none" transform="translate(8, 8) scale(1.083)">
+      <path d="M22 30 V66"/>
+      <path d="M40 30 V66"/>
+      <path d="M22 48 H40"/>
+      <path d="M54 30 H74"/>
+      <path d="M66 30 V56 Q66 66 57 66 Q49 66 49 57"/>
+    </g>
+  </g>
+
+  <!-- text block -->
+  <text x="96" y="318" fill="#FFFFFF" font-family="Helvetica, Arial, sans-serif" font-size="48" font-weight="700">Muhammad Hassan Jawwad</text>
+  <text x="96" y="378" fill="#DBEAFE" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="600">Software Engineer</text>
+  <text x="96" y="438" fill="#FFFFFF" fill-opacity="0.82" font-family="Helvetica, Arial, sans-serif" font-size="25" font-weight="400">React · Next.js · TypeScript · Go</text>
+
+  <!-- footer rule + handle -->
+  <rect x="96" y="520" width="1008" height="2" fill="#FFFFFF" fill-opacity="0.2"/>
+  <text x="96" y="566" fill="#FFFFFF" fill-opacity="0.7" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="500">github.com/hassanjawwad12</text>
+  <text x="1104" y="566" text-anchor="end" fill="#FFFFFF" fill-opacity="0.7" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="500">Pakistan · Remote</text>
+</svg>

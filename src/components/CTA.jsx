@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const CTA = () => {
+export default function CTA() {
   return (
     <section className='cta'>
       <p className='cta-text'>
@@ -12,6 +12,4 @@ const CTA = () => {
       </Link>
     </section>
   );
-};
-
-export default CTA;
+}

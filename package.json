@@ -1,17 +1,17 @@
 {
-  "name": "3d-portfolio",
+  "name": "hassan-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "npm run gh:snapshot",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "gh:snapshot": "node scripts/generate-github.mjs"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.11.0",
     "@react-spring/three": "^9.7.3",
     "@react-three/drei": "^9.88.2",
     "@react-three/fiber": "^8.14.5",
@@ -20,6 +20,26 @@
     "react-router-dom": "^6.17.0",
     "react-vertical-timeline-component": "^3.6.0",
     "three": "^0.157.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": { "browser": true, "es2020": true, "node": true },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:react/jsx-runtime",
+      "plugin:react-hooks/recommended"
+    ],
+    "ignorePatterns": ["dist", "node_modules"],
+    "parserOptions": { "ecmaVersion": "latest", "sourceType": "module" },
+    "settings": { "react": { "version": "18.2" } },
+    "plugins": ["react-refresh"],
+    "rules": {
+      "react-refresh/only-export-components": ["warn", { "allowConstantExport": true }],
+      "react/prop-types": "off",
+      "react/no-unknown-property": "off",
+      "react/no-unescaped-entities": "off"
+    }
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

@@ -4,6 +4,9 @@ import Loader from "./Loader";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import HomeInfo from "./HomeInfo";
+import AvailabilityBadge from "./AvailabilityBadge";
+import GithubStats from "./GithubStats";
+import Testimonials from "./Testimonials";
 
 export {
     CTA,
@@ -11,5 +14,8 @@ export {
     Loader,
     Navbar,
     Footer,
-    HomeInfo
+    HomeInfo,
+    AvailabilityBadge,
+    GithubStats,
+    Testimonials
 }

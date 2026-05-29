@@ -18,6 +18,8 @@ export function Bird() {
   // Note: Animation names can be found on the Sketchfab website where the 3D model is hosted.
   useEffect(() => {
     actions["Take 001"].play();
+    // Play once on mount only.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useFrame(({ clock, camera }) => {
@@ -48,8 +50,7 @@ export function Bird() {
   return (
     // to create and display 3D objects
     <mesh ref={birdRef} position={[-5, 2, 1]} scale={[0.003, 0.003, 0.003]}>
-      // use the primitive element when you want to directly embed a complex 3D
-      model or scene
+      {/* use the primitive element to directly embed a complex 3D model or scene */}
       <primitive object={scene} />
     </mesh>
   );

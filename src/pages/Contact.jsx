@@ -1,10 +1,12 @@
-import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef, useState } from "react";
 
 import { Fox } from "../models";
 import useAlert from "../hooks/useAlert";
-import { Alert, Loader } from "../components";
+import { Alert, AvailabilityBadge, Loader } from "../components";
+import { profile } from "@/data/profile";
+
+const CV_PATH = "/Muhammad-Hassan-Jawwad.pdf";
 
 const Contact = () => {
   const formRef = useRef();
@@ -20,55 +22,35 @@ const Contact = () => {
   const handleFocus = () => setCurrentAnimation("walk");
   const handleBlur = () => setCurrentAnimation("idle");
 
+  // No backend / EmailJS: compose a mailto: to my inbox from the form fields and
+  // hand off to the visitor's mail client. The 3D fox still reacts to the submit.
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
     setCurrentAnimation("hit");
 
-    emailjs
-      .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: "JavaScript Mastery",
-          from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
-          message: form.message,
-        },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setLoading(false);
-          showAlert({
-            show: true,
-            text: "Thank you for your message 😃",
-            type: "success",
-          });
+    const subject = `Portfolio enquiry from ${form.name || "a visitor"}`;
+    const body = [
+      `Name: ${form.name}`,
+      `Email: ${form.email}`,
+      "",
+      form.message,
+    ].join("\n");
 
-          setTimeout(() => {
-            hideAlert(false);
-            setCurrentAnimation("idle");
-            setForm({
-              name: "",
-              email: "",
-              message: "",
-            });
-          }, [3000]);
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-          setCurrentAnimation("idle");
+    const mailto = `mailto:${profile.email}?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
 
-          showAlert({
-            show: true,
-            text: "I didn't receive your message 😢",
-            type: "danger",
-          });
-        }
-      );
+    window.location.href = mailto;
+
+    setLoading(false);
+    setCurrentAnimation("idle");
+    showAlert({
+      show: true,
+      text: "Opening your mail app — send it my way 😃",
+      type: "success",
+    });
+    setTimeout(() => hideAlert(false), 3000);
   };
 
   return (
@@ -78,10 +60,32 @@ const Contact = () => {
       <div className='flex-1 min-w-[50%] flex flex-col'>
         <h1 className='head-text'>Get in Touch</h1>
 
+        <div className='mt-4 flex flex-wrap items-center gap-4'>
+          <AvailabilityBadge />
+          <a
+            href={CV_PATH}
+            download
+            className='text-sm font-semibold text-blue-600 hover:text-blue-700'
+          >
+            Download CV ↓
+          </a>
+        </div>
+
+        <p className='mt-4 text-slate-500'>
+          Prefer email? Reach me directly at{" "}
+          <a
+            href={`mailto:${profile.email}`}
+            className='font-medium text-blue-600 hover:text-blue-700'
+          >
+            {profile.email}
+          </a>
+          .
+        </p>
+
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className='w-full flex flex-col gap-7 mt-14'
+          className='w-full flex flex-col gap-7 mt-10'
         >
           <label className='text-black-500 font-semibold'>
             Name
@@ -89,7 +93,7 @@ const Contact = () => {
               type='text'
               name='name'
               className='input'
-              placeholder='John'
+              placeholder='Your name'
               required
               value={form.name}
               onChange={handleChange}
@@ -103,7 +107,7 @@ const Contact = () => {
               type='email'
               name='email'
               className='input'
-              placeholder='John@gmail.com'
+              placeholder='you@example.com'
               required
               value={form.email}
               onChange={handleChange}
@@ -118,6 +122,7 @@ const Contact = () => {
               rows='4'
               className='textarea'
               placeholder='Write your thoughts here...'
+              required
               value={form.message}
               onChange={handleChange}
               onFocus={handleFocus}
@@ -132,7 +137,7 @@ const Contact = () => {
             onFocus={handleFocus}
             onBlur={handleBlur}
           >
-            {loading ? "Sending..." : "Submit"}
+            {loading ? "Opening…" : "Send message"}
           </button>
         </form>
       </div>
