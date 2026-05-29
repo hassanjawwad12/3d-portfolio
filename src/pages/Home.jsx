@@ -8,6 +8,9 @@ import { Bird, Island, Plane, Sky } from "../models";
 
 const Home = () => {
   const audioRef = useRef(new Audio(sakura));
+  // Don't buffer the 5 MB track on load — it only plays on click, and an eager
+  // preload competes with the 3D model downloads for bandwidth.
+  audioRef.current.preload = "none";
   audioRef.current.volume = 0.4;
   audioRef.current.loop = true;
 
