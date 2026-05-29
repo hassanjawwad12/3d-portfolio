@@ -6,7 +6,6 @@ import Footer from "./Footer";
 import HomeInfo from "./HomeInfo";
 import AvailabilityBadge from "./AvailabilityBadge";
 import GithubStats from "./GithubStats";
-import Testimonials from "./Testimonials";
 
 export {
     CTA,
@@ -16,6 +15,5 @@ export {
     Footer,
     HomeInfo,
     AvailabilityBadge,
-    GithubStats,
-    Testimonials
+    GithubStats
 }

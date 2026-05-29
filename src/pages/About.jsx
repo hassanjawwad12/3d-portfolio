@@ -3,7 +3,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 
-import { AvailabilityBadge, CTA, GithubStats, Testimonials } from "../components";
+import { AvailabilityBadge, CTA, GithubStats } from "../components";
 import { profile } from "@/data/profile";
 import { skills } from "@/data/skills";
 import { experience } from "@/data/experience";
@@ -184,10 +184,6 @@ const About = () => {
 
       <div className='py-6'>
         <GithubStats />
-      </div>
-
-      <div className='py-12'>
-        <Testimonials />
       </div>
 
       <hr className='border-slate-200' />
