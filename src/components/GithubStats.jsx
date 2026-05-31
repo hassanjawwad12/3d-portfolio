@@ -137,10 +137,10 @@ const GithubStats = () => {
                 href={repo.url}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='group flex flex-col rounded-xl border border-slate-200 p-4 transition-colors hover:border-blue-200 hover:bg-blue-50/40'
+                className='group flex min-w-0 flex-col rounded-xl border border-slate-200 p-4 transition-colors hover:border-blue-200 hover:bg-blue-50/40'
               >
-                <div className='flex items-center justify-between gap-2'>
-                  <span className='truncate font-poppins font-semibold text-slate-800 group-hover:text-blue-700'>
+                <div className='flex min-w-0 items-center justify-between gap-2'>
+                  <span className='min-w-0 truncate font-poppins font-semibold text-slate-800 group-hover:text-blue-700'>
                     {repo.name}
                   </span>
                   <span className='shrink-0 text-sm text-slate-400'>
