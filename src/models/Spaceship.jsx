@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 
 import spaceshipScene from "../assets/3d/plane2.glb";
@@ -20,19 +19,4 @@ export function Spaceship({ isRotating, ...props }) {
       <primitive object={scene} />
     </mesh>
   );
-}
-
-/**
- * Invisible loader that warms the spaceship model into the drei cache and
- * reports back once it is available. Mount it inside its own <Suspense
- * fallback={null}> so the 20 MB download never blocks the primary scene.
- */
-export function SpaceshipPreloader({ onReady }) {
-  const { scene } = useGLTF(spaceshipScene);
-
-  useEffect(() => {
-    if (scene) onReady();
-  }, [scene, onReady]);
-
-  return null;
 }

@@ -2,12 +2,12 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import { Footer, Navbar } from "./components";
 import { About, Contact, Home, Projects } from "./pages";
-import { VehicleProvider } from "./context/VehicleContext";
+import { SceneProvider } from "./context/SceneContext";
 
 const App = () => {
   return (
     <main className='bg-slate-300/20'>
-      <VehicleProvider>
+      <SceneProvider>
         <Router>
           <Navbar />
           <Routes>
@@ -27,7 +27,7 @@ const App = () => {
             />
           </Routes>
         </Router>
-      </VehicleProvider>
+      </SceneProvider>
     </main>
   );
 };

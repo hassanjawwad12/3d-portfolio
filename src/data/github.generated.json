@@ -1,6 +1,6 @@
 {
   "username": "hassanjawwad12",
-  "fetchedAt": "2026-05-31T21:31:22.934Z",
+  "fetchedAt": "2026-05-31T22:11:28.526Z",
   "repos": [
     {
       "name": "Nutrify.AI",
@@ -283,6 +283,16 @@
       "topics": []
     },
     {
+      "name": "3d-portfolio",
+      "description": "A 3d Portfolio",
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "url": "https://github.com/hassanjawwad12/3d-portfolio",
+      "updated": "2026-05-31T21:34:04Z",
+      "topics": []
+    },
+    {
       "name": "zineos",
       "description": "A maximalist Y2K collage studio that boots like a haunted OS. Hand-built 2D transform engine (drag/rotate/resize), live GIPHY sticker search, PNG export , Next.js + TS, zero editor    libraries.",
       "language": "TypeScript",
@@ -290,16 +300,6 @@
       "forks": 0,
       "url": "https://github.com/hassanjawwad12/zineos",
       "updated": "2026-05-31T20:59:48Z",
-      "topics": []
-    },
-    {
-      "name": "3d-portfolio",
-      "description": "A 3d Portfolio",
-      "language": "JavaScript",
-      "stars": 0,
-      "forks": 0,
-      "url": "https://github.com/hassanjawwad12/3d-portfolio",
-      "updated": "2026-05-31T20:10:41Z",
       "topics": []
     },
     {

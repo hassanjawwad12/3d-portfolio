@@ -2,15 +2,15 @@ import { NavLink, useLocation } from "react-router-dom";
 
 import { logoHj } from "../assets/images";
 import { profile } from "@/data/profile";
-import { useVehicle, VEHICLES } from "../context/VehicleContext";
+import { useScene, SCENARIOS } from "../context/SceneContext";
 
 const Navbar = () => {
   const { pathname } = useLocation();
-  const { vehicle, setVehicle, isSpaceshipReady } = useVehicle();
+  const { scenario, setScenario, isVolcanoReady } = useScene();
 
-  // The switcher only controls the model in Home's canvas, and only makes sense
-  // once the heavier spaceship has finished downloading.
-  const showVehicleSwitcher = pathname === "/" && isSpaceshipReady;
+  // The scenario switcher only controls the Home canvas, and only makes sense
+  // once the heavier volcano assets (island + spaceship) have downloaded.
+  const showScenarioSwitcher = pathname === "/" && isVolcanoReady;
 
   return (
     <header className='header'>
@@ -24,17 +24,17 @@ const Navbar = () => {
         />
       </NavLink>
       <nav className='flex items-center text-lg gap-7 font-medium' aria-label='Main navigation'>
-        {showVehicleSwitcher && (
+        {showScenarioSwitcher && (
           <label className='flex items-center gap-2 text-sm'>
-            <span className='sr-only'>Choose vehicle</span>
+            <span className='sr-only'>Choose scene</span>
             <select
-              value={vehicle}
-              onChange={(event) => setVehicle(event.target.value)}
-              aria-label='Switch the flying vehicle'
+              value={scenario}
+              onChange={(event) => setScenario(event.target.value)}
+              aria-label='Switch the scene'
               className='cursor-pointer rounded-lg border border-black/15 bg-white/70 px-2 py-1 text-black shadow-sm backdrop-blur transition hover:border-blue-500 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500/40'
             >
-              <option value={VEHICLES.PLANE}>✈️ Biplane</option>
-              <option value={VEHICLES.SPACESHIP}>🚀 Spaceship</option>
+              <option value={SCENARIOS.TROPICAL}>🏝️ Tropical</option>
+              <option value={SCENARIOS.VOLCANO}>🌋 Volcano</option>
             </select>
           </label>
         )}
