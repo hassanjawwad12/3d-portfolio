@@ -1,15 +1,15 @@
 {
   "username": "hassanjawwad12",
-  "fetchedAt": "2026-05-29T17:02:37.825Z",
+  "fetchedAt": "2026-05-31T21:31:22.934Z",
   "repos": [
     {
       "name": "Nutrify.AI",
       "description": "AI based nutrition and cost optimized cattle feed generator",
       "language": "JavaScript",
-      "stars": 6,
+      "stars": 5,
       "forks": 0,
       "url": "https://github.com/hassanjawwad12/Nutrify.AI",
-      "updated": "2025-12-11T16:57:28Z",
+      "updated": "2026-05-30T21:01:34Z",
       "topics": []
     },
     {
@@ -69,7 +69,7 @@
       "stars": 2,
       "forks": 0,
       "url": "https://github.com/hassanjawwad12/dev-portfolio",
-      "updated": "2025-12-11T16:58:58Z",
+      "updated": "2026-05-29T20:01:10Z",
       "topics": []
     },
     {
@@ -283,13 +283,23 @@
       "topics": []
     },
     {
+      "name": "zineos",
+      "description": "A maximalist Y2K collage studio that boots like a haunted OS. Hand-built 2D transform engine (drag/rotate/resize), live GIPHY sticker search, PNG export , Next.js + TS, zero editor    libraries.",
+      "language": "TypeScript",
+      "stars": 0,
+      "forks": 0,
+      "url": "https://github.com/hassanjawwad12/zineos",
+      "updated": "2026-05-31T20:59:48Z",
+      "topics": []
+    },
+    {
       "name": "3d-portfolio",
       "description": "A 3d Portfolio",
       "language": "JavaScript",
       "stars": 0,
       "forks": 0,
       "url": "https://github.com/hassanjawwad12/3d-portfolio",
-      "updated": "2026-05-29T10:26:57Z",
+      "updated": "2026-05-31T20:10:41Z",
       "topics": []
     },
     {
@@ -980,16 +990,6 @@
       "forks": 0,
       "url": "https://github.com/hassanjawwad12/Javascript-Practice",
       "updated": "2024-02-17T12:13:09Z",
-      "topics": []
-    },
-    {
-      "name": "react-dashboard",
-      "description": "",
-      "language": "JavaScript",
-      "stars": 0,
-      "forks": 0,
-      "url": "https://github.com/hassanjawwad12/react-dashboard",
-      "updated": "2024-01-21T10:16:00Z",
       "topics": []
     }
   ]
